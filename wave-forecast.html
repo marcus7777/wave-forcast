@@ -1,4 +1,3 @@
-<link rel="import" href="../google-map/google-map.html">
 <link rel="import" href="../polymer/polymer.html">
 <!--
 `<wave-forcast>` a forecast to let you know the current wave heights
@@ -17,6 +16,12 @@
 </dom-module>
 <script>
   Polymer({
-    is: "wave-forcast"
+    is: "wave-forcast",
+    properties: {
+      beachName: {computed:"getBeachName(data)"}
+    },
+    getBeachName: function (data) {
+      debugger
+    }
   });
 </script>

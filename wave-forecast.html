@@ -9,7 +9,7 @@
     <h3 id="current-name">Maddie's Local Beach</h3>
     <div class="result" id="localBeach-lastUpdate">{{beachName}}</div>
     <div class="result" id="localBeach-minwave">{{minWaveHeight}}</div>
-    <div class="result" id="localBeach-maxwave">{{minWaveHeight}}</div>
+    <div class="result" id="localBeach-maxwave">{{maxWaveHeight}}</div>
     <iron-ajax auto url="{{_url}}" handle-as="json" last-response="{{data}}"></iron-ajax>
   </template>
 </dom-module>
@@ -17,9 +17,11 @@
   Polymer({
     is: "wave-forcast",
     properties: {
-      minWaveHeight: {computed:"getBeachName(data)"},
+      beachName: {computed:"getBeachName(_names,id)"},
+      minWaveHeight: {computed:"minWaveHeight(data)"},
+      maxWaveHeight: {computed:"maxWaveHeight(data)"},
       server: {value: "/bower_components/ean-rates/server/"},
-      names:{
+      _names:{
         value:{
           135:"Falmouth",
           1398:"Bacton",
@@ -47,6 +49,9 @@
     },
     _getSending: function(apiKey, beachId) {
       return apiKey + "/forecast/?spot_id=" + beachId
+    },
+    getBeachName: function(names,id) {
+      return names[id]
     }
   });
 </script>

@@ -19,6 +19,26 @@
     properties: {
       minWaveHeight: {computed:"getBeachName(data)"},
       server: {value: "/bower_components/ean-rates/server/"},
+      names:{
+        value:{
+          135:"Falmouth",
+          1398:"Bacton",
+          1377:"Bamburgh",
+          10:"Bantham",
+          992:"Beadnell Bay",
+          16:"Birling Gap",
+          3939:"Blackpool South",
+          1323:"Boscombe",
+          1:"Newquay - Fistral North",
+          1337:"Newquay - Porth",
+          969:"Polzeath",
+          7:"Croyde Beach",
+          1283:"Banna Beach",
+          3749:"Culdaff",
+          5:"Constantine",
+          961:"Watergate Bay"
+        }
+      },
       _sending:{computed:"_getSending(apiKey, beachId)"}
       _url:{computed: "_getUrl(server, _sending)"},
     },

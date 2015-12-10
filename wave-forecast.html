@@ -17,6 +17,18 @@
 </dom-module>
 <script>
   Polymer({
-    is: "wave-forcast"
+    is: "wave-forcast",
+    properties: {
+      minWaveHeight: {computed:"getBeachName(data)"},
+      server: {value: "/bower_components/ean-rates/server/"},
+      _sending:{computed:"_getSending(apiKey, beachId)"}
+      _url:{computed: "_getUrl(server, _sending)"},
+    },
+    _getUrl: function(server, sending) {
+      return server + "?u=" + encodeURIComponent(sending)
+    },
+    _getSending: function(apiKey, beachId) {
+      return apiKey + "/forecast/?spot_id=" + beachId
+    }
   });
 </script>

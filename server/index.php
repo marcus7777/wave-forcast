@@ -31,7 +31,7 @@ header('Access-Control-Allow-Origin: *');
 /* Safety Feature */
 header('Content-Type: text/plain');
 /* Continue */
-print  _get_data('http://magicseaweed.com/api/?' . $client_url );
+print  _get_data('http://magicseaweed.com/api/' . $client_url );
 function _get_data ($url) {
   return file_get_contents($url);
 }

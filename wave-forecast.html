@@ -41,14 +41,14 @@
           961:"Watergate Bay"
         }
       },
-      _sending:{computed:"_getSending(apiKey, beachId)"}
+      _sending:{computed:"_getSending(apiKey, id)"}
       _url:{computed: "_getUrl(server, _sending)"},
     },
     _getUrl: function(server, sending) {
       return server + "?u=" + encodeURIComponent(sending)
     },
-    _getSending: function(apiKey, beachId) {
-      return apiKey + "/forecast/?spot_id=" + beachId
+    _getSending: function(apiKey, id) {
+      return apiKey + "/forecast/?spot_id=" + id
     },
     getBeachName: function(names,id) {
       return names[id]
